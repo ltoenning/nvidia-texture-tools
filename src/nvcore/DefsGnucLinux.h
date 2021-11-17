@@ -2,6 +2,8 @@
 #error "Do not include this file directly."
 #endif
 
+#include <stdint.h>
+
 // Function linkage
 #define DLL_IMPORT
 #if __GNUC__ >= 4
@@ -57,9 +59,6 @@ typedef signed short        int16;
 
 typedef unsigned int        uint32;
 typedef signed int          int32;
-
-typedef unsigned long long  uint64;
-typedef signed long long    int64;
 
 // Aliases
 typedef uint32              uint;

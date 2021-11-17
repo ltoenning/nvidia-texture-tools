@@ -42,7 +42,7 @@ struct MyOutputHandler : public nvtt::OutputHandler
 	MyOutputHandler(const char * name) : total(0), progress(0), percentage(0), stream(new nv::StdOutputStream(name)) {}
 	virtual ~MyOutputHandler() { delete stream; }
 	
-	void setTotal(int64 t)
+	void setTotal(signed long long t)
 	{
 		total = t + 128;
 	}
@@ -76,8 +76,8 @@ struct MyOutputHandler : public nvtt::OutputHandler
 		return true;
 	}
 	
-	int64 total;
-	int64 progress;
+	signed long long total;
+	signed long long progress;
 	int percentage;
 	bool verbose;
 	nv::StdOutputStream * stream;

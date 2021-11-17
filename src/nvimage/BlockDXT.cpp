@@ -412,8 +412,8 @@ void AlphaBlockDXT5::setIndex(uint index, uint value)
 	nvDebugCheck(value < 8);
 
 	int offset = (3 * index + 16);
-	uint64 mask = uint64(0x7) << offset;
-	this->u = (this->u & ~mask) | (uint64(value) << offset);
+	unsigned long long mask = (unsigned long long)(0x7) << offset;
+	this->u = (this->u & ~mask) | ((unsigned long long)(value) << offset);
 }
 
 void AlphaBlockDXT5::decodeBlock(ColorBlock * block) const
@@ -433,10 +433,10 @@ void AlphaBlockDXT5::decodeBlock(ColorBlock * block) const
 
 void AlphaBlockDXT5::flip4()
 {
-	uint64 * b = (uint64 *)this;
+	unsigned long long* b = (unsigned long long *)this;
 	
 	// @@ The masks might have to be byte swapped.
-	uint64 tmp = (*b & POSH_U64(0x000000000000FFFF));
+	unsigned long long tmp = (*b & POSH_U64(0x000000000000FFFF));
 	tmp |= (*b & POSH_U64(0x000000000FFF0000)) << 36;
 	tmp |= (*b & POSH_U64(0x000000FFF0000000)) << 12;
 	tmp |= (*b & POSH_U64(0x000FFF0000000000)) >> 12;

@@ -116,12 +116,12 @@ public:
 		nvStaticCheck(sizeof(int32) == 4);
 		return s.byteOrderSerialize( &c, 4 );
 	}
-	friend Stream & operator<<( Stream & s, uint64 & c ) {
-		nvStaticCheck(sizeof(uint64) == 8);
+	friend Stream & operator<<( Stream & s, unsigned long long & c ) {
+		nvStaticCheck(sizeof(unsigned long long) == 8);
 		return s.byteOrderSerialize( &c, 8 );
 	}
-	friend Stream & operator<<( Stream & s, int64 & c ) {
-		nvStaticCheck(sizeof(int64) == 8);
+	friend Stream & operator<<( Stream & s, signed long long & c ) {
+		nvStaticCheck(sizeof(signed long long) == 8);
 		return s.byteOrderSerialize( &c, 8 );
 	}
 	friend Stream & operator<<( Stream & s, float & c ) {

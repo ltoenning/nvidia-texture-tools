@@ -431,7 +431,7 @@ namespace
 
 	static bool sameIndices(const AlphaBlockDXT5 & block0, const AlphaBlockDXT5 & block1)
 	{
-		const uint64 mask = ~uint64(0xFFFF);
+		const unsigned long long mask = ~(unsigned long long)(0xFFFF);
 		return (block0.u | mask) == (block1.u | mask);
 	}
 

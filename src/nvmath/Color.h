@@ -16,7 +16,7 @@ public:
 	Color64() { }
 	Color64(const Color64 & c) : u(c.u) { }
 	Color64(uint16 R, uint16 G, uint16 B, uint16 A) { setRGBA(R, G, B, A); }
-	explicit Color64(uint64 U) : u(U) { }
+	explicit Color64(unsigned long long U) : u(U) { }
 
 	void setRGBA(uint16 R, uint16 G, uint16 B, uint16 A)
 	{
@@ -26,7 +26,7 @@ public:
 		a = A;
 	}
 
-	operator uint64 () const {
+	operator unsigned long long () const {
 		return u;
 	}
 
@@ -41,7 +41,7 @@ public:
 			uint16 b: 16;
 #endif
 		};
-		uint64 u;
+		unsigned long long u;
 	};
 };
 
